@@ -128,7 +128,7 @@ class Argparse
         $options += $default;
         if(is_string($options['action'])) $options['action'] = array($this, $options['action']);
         if(!is_callable($options['action'])) throw new InvalidArgumentException("Invalid action: {$options['action'][1]}");
-        if(is_null($option['metavar'])) $option['metavar'] = ltrim($name, '-');
+        if(is_null($options['metavar'])) $options['metavar'] = ltrim($name, '-');
 
         $options['name'] = $name;
         if (strpos($name, '-') === 0) // Optional argument specified
@@ -152,7 +152,7 @@ class Argparse
             }
             $name = $options['name'] = ltrim($options['long'], '-');
             if(is_null($options['required'])) $options['required'] = false;
-            $options['usage'] = ($options['short'] ?: $options['long']) . str_repeat(' '.strtoupper($option['metavar']).' ', $options['nargs']);
+            $options['usage'] = ($options['short'] ?: $options['long']) . str_repeat(' '.strtoupper($options['metavar']).' ', $options['nargs']);
             if(!$options['required'])
             {
                 $options['usage'] = '['.$options['usage'].']';
