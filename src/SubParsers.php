@@ -5,8 +5,7 @@
    * @author Petr Saganov <saganoff@gmail.com>
    */
 
-require_once __DIR__.'/Parser.php';
-require_once __DIR__.'/IArgument.php';
+namespace saganov\argparse;
 
 class SubParsers extends Parser implements IArgument
 {
@@ -67,5 +66,3 @@ class SubParsers extends Parser implements IArgument
                                return $help .= $parser->help("\t".$format);});
     }
 }
-
-class UndeclaredSubparserException extends \Exception {}

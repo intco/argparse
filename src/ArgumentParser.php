@@ -5,8 +5,7 @@
    * @author Petr Saganov <saganoff@gmail.com>
    */
 
-require_once __DIR__."/Parser.php";
-require_once __DIR__."/Option.php";
+namespace saganov\argparse;
 
 class ArgumentParser extends Parser
 {
@@ -103,4 +102,3 @@ class ArgumentParser extends Parser
     }
 }
 
-class MissedArgumentException extends \Exception {}

@@ -1,0 +1,22 @@
+{
+    "name": "intco/argparse",
+    "description": "composer ready fork of https://github.com/saganov/argparse",
+    "require": {
+        "php": "^5.6.23 || ^7.0"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": { "saganov\\argparse\\": "src" },
+        "exclude-from-classmap": [
+            "/tests/"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Petr Saganov"
+        },
+        {
+            "name": "Angelo Galleja"
+        }
+    ]    
+}

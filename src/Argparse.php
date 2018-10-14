@@ -5,6 +5,10 @@
    * @author Petr Saganov <saganoff@gmail.com>
    */
 
+
+namespace saganov\argparse;
+
+
 class Argparse
 {
     protected $_prog;
@@ -358,11 +362,6 @@ class Argparse
     }
 }
 
-//class InvalidArgumentException extends \Exception {}
-class MissedOptionException extends \Exception {}
-class MissedArgumentException extends \Exception {}
-class MissedRequiredArgumentException extends \Exception {}
-
 class Subparsers
 {
     protected $title;
@@ -477,5 +476,3 @@ class Subparsers
         exit (0);
     }
 }
-
-class UndeclaredSubparserException extends \Exception {}

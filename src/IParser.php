@@ -1,4 +1,5 @@
 <?php
+namespace saganov\argparse;
 
 interface IParser
 {

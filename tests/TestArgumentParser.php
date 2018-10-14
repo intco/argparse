@@ -1,9 +1,12 @@
 <?php
+require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'vendor/autoload.php';
 
-require_once __DIR__.'/../src/ArgumentParser.php';
-require_once __DIR__.'/../src/Argument.php';
-require_once __DIR__.'/../src/Option.php';
-require_once __DIR__.'/../src/SubParsers.php';
+use \saganov\argparse\ArgumentParser;
+use \saganov\argparse\SubArgumentParser;
+use \saganov\argparse\SubParsers;
+use \saganov\argparse\Argument;
+use \saganov\argparse\Option;
+;
 
 echo "====== Test Argument Parser help =====\n";
 $main = (new ArgumentParser('Test'))->_description('Test programm to test')

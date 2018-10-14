@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__.'/IArgument.php';
+
+namespace saganov\argparse;
 
 class Argument implements IArgument
 {
@@ -168,6 +169,3 @@ class Argument implements IArgument
         $this->value = $value;
     }
 }
-
-class ArgumentException extends \Exception{}
-class InvalidActionException extends \Exception {}

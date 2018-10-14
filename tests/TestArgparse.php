@@ -1,6 +1,8 @@
 <?php
+require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'vendor/autoload.php';
 
-require __DIR__.'/../src/Argparse.php';
+use \saganov\argparse\ArgParse;
+
 
 echo "====== Test argparser =====\n";
 $test = new Argparse('Test', 'Test programm to test');
@@ -22,7 +24,7 @@ $parser_a->addArgument('bazaa'); //('bar', type=int, help='bar help');
 $parser_b = $subparsers->addParser('b'); //('b', help='b help');
 $parser_b->addArgument('--bazbb'); //('--baz', choices='XYZ', help='baz help');
 
-$test->printHelp();
+$test->help();
 $input = array('BAR', 'ZAB', '--hah', 'HAH', 'a', 'BAZAA');
 printf("INPUT: %s\n", implode(' ', $input));
 $test->parse($input);
@@ -46,7 +48,7 @@ $parser_a->addArgument('bazaa'); //('bar', type=int, help='bar help');
 $parser_b = $subparsers->addParser('b'); //('b', help='b help');
 $parser_b->addArgument('--bazbb'); //('--baz', choices='XYZ', help='baz help');
 
-$anonim->printHelp();
+$anonim->help();
 
 $input = array('BAR', 'b', '--bazbb', 'BAZBB');
 printf("INPUT: %s\n", implode(' ', $input));
@@ -64,7 +66,7 @@ $share = $command->addParser('share', 'SHARE', 'Clear VM from personal data and 
 $prepare = $command->addParser('prepare-dev', 'PREPARE-DEV', 'Create symlinks on the VM for specified instance.');
 $prepare->addArgument('name', array('help' => 'Instance name. If the name is not specified, the value of config option "vm_hostname" without .ua3 is used.'));
 
-$vmCli->printHelp();
+$vmCli->help();
 
 $input = array('tune', 'b', '--bazbb', 'BAZBB');
 printf("INPUT: %s\n", implode(' ', $input));

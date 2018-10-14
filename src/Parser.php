@@ -5,7 +5,7 @@
    * @author Petr Saganov <saganoff@gmail.com>
    */
 
-require_once __DIR__."/IParser.php";
+namespace saganov\argparse;
 
 abstract class Parser implements IParser
 {
@@ -176,4 +176,4 @@ abstract class Parser implements IParser
     }
 }
 
-class ParserException extends \Exception{}
+

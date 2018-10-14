@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'/Argument.php';
+namespace saganov\argparse;
 
 class Option extends Argument
 {
